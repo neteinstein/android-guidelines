@@ -2,7 +2,7 @@
 
 ## 1.1 Project structure
 
-New projects should follow the Android Gradle project structure that is defined on the [Android Gradle plugin user guide](http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Project-Structure). The [ribot Boilerplate](https://github.com/ribot/android-boilerplate) project is a good reference to start from.
+New projects should follow the Android Gradle project structure that is defined on the [Android Gradle plugin user guide](http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Project-Structure).
 
 ## 1.2 File naming
 
@@ -197,15 +197,20 @@ class MyClass {
 }
 ```
 
-Braces around the statements are required unless the condition and the body fit on one line.
-
-If the condition and the body fit on one line and that line is shorter than the max line length, then braces are not required, e.g.
+Always use braces around the statements even if the body fits on one line.
 
 ```java
-if (condition) body();
+if (condition)  {
+   body();
+}
 ```
 
 This is __bad__:
+
+
+```java
+if (condition) body();  // bad!
+```
 
 ```java
 if (condition)
@@ -638,22 +643,4 @@ When using the Espresso API it is a common practice to place chained methods in 
 onView(withId(R.id.view))
         .perform(scrollTo())
         .check(matches(isDisplayed()))
-```
-
-# License
-
-```
-Copyright 2015 Ribot Ltd.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
 ```
